@@ -1,0 +1,6 @@
+*.log
+*.sock
+*.lock
+session.json
+session-snapshots/
+.DS_Store
