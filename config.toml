@@ -18,4 +18,4 @@ allow_nested = true
 
 
 [ui.sidebar.agents]
-rows = [["state_icon", "$logo", "agent", "workspace", "tab"]]
+rows = [["state_icon", "$logo", "workspace", "tab"]]
