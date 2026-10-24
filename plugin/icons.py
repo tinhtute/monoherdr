@@ -16,8 +16,9 @@ LOGOS = {
     "glm": 0xE1B7, "kimchi": 0xE1B8, "muse": 0xE1B9, "crush": 0xE1BA,
 }
 SOURCE = "monoherdr:icons"
-# quaqua grid_role → sidebar label; config.toml colours these by prefix.
-ROLES = {"cos": "★", "orchestrator": "◆", "worker": "⚙"}
+# quaqua grid_role → the pane-name token it fills; config.toml colours each by role.
+ROLE_TOKENS = {"cos": "name_cos", "orchestrator": "name_lead", "worker": "name_worker"}
+STALE = ["role_label", "cos_bar", "lead_bar", "worker_bar", "logo_cos", "logo_lead", "logo_worker"]
 
 
 def herdr():
@@ -32,15 +33,20 @@ def main():
         name = (a.get("display_agent") or a.get("agent") or "").lower()
         cp = LOGOS.get(name) or LOGOS.get(a.get("agent", ""))
         args = [herdr(), "pane", "report-metadata", a["pane_id"], "--source", SOURCE]
+        tokens = a.get("tokens") or {}
         if clear or cp is None:
             args += ["--clear-token", "logo"]
         else:
             args += ["--token", "logo=" + chr(cp)]
-        role = ROLES.get((a.get("tokens") or {}).get("grid_role", ""))
-        if clear or role is None:
-            args += ["--clear-token", "role_label"]
-        else:
-            args += ["--token", "role_label=" + role]
+        role = None if clear else ROLE_TOKENS.get(tokens.get("grid_role", ""))
+        for tok in ROLE_TOKENS.values():
+            if tok == role:
+                label = a.get("name") or ("CoS" if tok == "name_cos" else tokens.get("grid_owner")) or a["pane_id"]
+                args += ["--token", f"{tok}={label}"]
+            else:
+                args += ["--clear-token", tok]
+        for tok in STALE:
+            args += ["--clear-token", tok]
         subprocess.run(args, capture_output=True)
 
 

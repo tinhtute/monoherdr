@@ -12,7 +12,7 @@ command = ["/usr/bin/python3", "-I", "icons.py"]
 on = "pane.agent_detected"
 command = ["/usr/bin/python3", "-I", "icons.py"]
 
-# quaqua tags grid_role after detection; re-run so $role_label catches up.
+# quaqua tags grid_role after detection; re-run so role pane name catches up.
 [[events]]
 on = "pane.agent_status_changed"
 command = ["/usr/bin/python3", "-I", "icons.py"]
@@ -20,11 +20,11 @@ command = ["/usr/bin/python3", "-I", "icons.py"]
 [[actions]]
 id = "refresh"
 title = "Agent icons: refresh"
-description = "Re-publish the $logo and $role_label tokens on every agent pane."
+description = "Re-publish the $logo and role pane name tokens on every agent pane."
 command = ["/usr/bin/python3", "-I", "icons.py"]
 
 [[actions]]
 id = "clear"
 title = "Agent icons: clear"
-description = "Remove the $logo and $role_label tokens from every agent pane."
+description = "Remove the $logo and role pane name tokens from every agent pane."
 command = ["/usr/bin/python3", "-I", "icons.py", "--clear"]
