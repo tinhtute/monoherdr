@@ -8,7 +8,7 @@ auto_switch = false
 
 status_indicators = "symbols"
 tab_bar_position = "top"
-hide_tab_bar_when_single_tab = true
+hide_tab_bar_when_single_tab = false
 
 [ui.toast]
 delivery = "herdr"
