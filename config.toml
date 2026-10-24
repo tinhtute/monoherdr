@@ -18,14 +18,14 @@ allow_nested = true
 
 
 [ui.sidebar.agents]
-rows = [["state_icon", "$logo", "workspace", "tab"]]
+rows = [["state_icon", "$logo", { token = "$role_label", rules = [{ starts_with = "★", fg = "#e5c07b", bold = true }, { starts_with = "◆", fg = "#c678dd", bold = true }, { starts_with = "⚙", fg = "#56b6c2" }] }, "workspace", "tab"]]
 
 # Brand colours from hhdebb/herdr-radar lib/palette.js; ink-only vendors keep the default.
 [ui.sidebar.agents.rows_by_agent]
-claude = [["state_icon", { token = "$logo", fg = "#d97757" }, "workspace", "tab"]]
-gemini = [["state_icon", { token = "$logo", fg = "#4285f4" }, "workspace", "tab"]]
-kimi = [["state_icon", { token = "$logo", fg = "#1783ff" }, "workspace", "tab"]]
-qwen = [["state_icon", { token = "$logo", fg = "#615ced" }, "workspace", "tab"]]
-kiro = [["state_icon", { token = "$logo", fg = "#9046ff" }, "workspace", "tab"]]
-cline = [["state_icon", { token = "$logo", fg = "#586876" }, "workspace", "tab"]]
-kilo = [["state_icon", { token = "$logo", fg = "#9a9808" }, "workspace", "tab"]]
+claude = [["state_icon", { token = "$logo", fg = "#d97757" }, { token = "$role_label", rules = [{ starts_with = "★", fg = "#e5c07b", bold = true }, { starts_with = "◆", fg = "#c678dd", bold = true }, { starts_with = "⚙", fg = "#56b6c2" }] }, "workspace", "tab"]]
+gemini = [["state_icon", { token = "$logo", fg = "#4285f4" }, { token = "$role_label", rules = [{ starts_with = "★", fg = "#e5c07b", bold = true }, { starts_with = "◆", fg = "#c678dd", bold = true }, { starts_with = "⚙", fg = "#56b6c2" }] }, "workspace", "tab"]]
+kimi = [["state_icon", { token = "$logo", fg = "#1783ff" }, { token = "$role_label", rules = [{ starts_with = "★", fg = "#e5c07b", bold = true }, { starts_with = "◆", fg = "#c678dd", bold = true }, { starts_with = "⚙", fg = "#56b6c2" }] }, "workspace", "tab"]]
+qwen = [["state_icon", { token = "$logo", fg = "#615ced" }, { token = "$role_label", rules = [{ starts_with = "★", fg = "#e5c07b", bold = true }, { starts_with = "◆", fg = "#c678dd", bold = true }, { starts_with = "⚙", fg = "#56b6c2" }] }, "workspace", "tab"]]
+kiro = [["state_icon", { token = "$logo", fg = "#9046ff" }, { token = "$role_label", rules = [{ starts_with = "★", fg = "#e5c07b", bold = true }, { starts_with = "◆", fg = "#c678dd", bold = true }, { starts_with = "⚙", fg = "#56b6c2" }] }, "workspace", "tab"]]
+cline = [["state_icon", { token = "$logo", fg = "#586876" }, { token = "$role_label", rules = [{ starts_with = "★", fg = "#e5c07b", bold = true }, { starts_with = "◆", fg = "#c678dd", bold = true }, { starts_with = "⚙", fg = "#56b6c2" }] }, "workspace", "tab"]]
+kilo = [["state_icon", { token = "$logo", fg = "#9a9808" }, { token = "$role_label", rules = [{ starts_with = "★", fg = "#e5c07b", bold = true }, { starts_with = "◆", fg = "#c678dd", bold = true }, { starts_with = "⚙", fg = "#56b6c2" }] }, "workspace", "tab"]]

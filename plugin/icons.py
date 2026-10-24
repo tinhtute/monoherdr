@@ -16,6 +16,8 @@ LOGOS = {
     "glm": 0xE1B7, "kimchi": 0xE1B8, "muse": 0xE1B9, "crush": 0xE1BA,
 }
 SOURCE = "monoherdr:icons"
+# quaqua grid_role → sidebar label; config.toml colours these by prefix.
+ROLES = {"cos": "★", "orchestrator": "◆", "worker": "⚙"}
 
 
 def herdr():
@@ -34,6 +36,11 @@ def main():
             args += ["--clear-token", "logo"]
         else:
             args += ["--token", "logo=" + chr(cp)]
+        role = ROLES.get((a.get("tokens") or {}).get("grid_role", ""))
+        if clear or role is None:
+            args += ["--clear-token", "role_label"]
+        else:
+            args += ["--token", "role_label=" + role]
         subprocess.run(args, capture_output=True)
 
 
