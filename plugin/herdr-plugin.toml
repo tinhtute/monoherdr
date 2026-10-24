@@ -1,0 +1,25 @@
+id = "monoherdr.agent-icons"
+name = "monoherdr agent icons"
+version = "0.1.0"
+min_herdr_version = "0.9.0"
+description = "Publish each agent's logo glyph as the $logo sidebar token."
+platforms = ["linux", "macos"]
+
+[[startup]]
+command = ["/usr/bin/python3", "-I", "icons.py"]
+
+[[events]]
+on = "pane.agent_detected"
+command = ["/usr/bin/python3", "-I", "icons.py"]
+
+[[actions]]
+id = "refresh"
+title = "Agent icons: refresh"
+description = "Re-publish the $logo token on every agent pane."
+command = ["/usr/bin/python3", "-I", "icons.py"]
+
+[[actions]]
+id = "clear"
+title = "Agent icons: clear"
+description = "Remove the $logo token from every agent pane."
+command = ["/usr/bin/python3", "-I", "icons.py", "--clear"]

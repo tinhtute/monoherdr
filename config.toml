@@ -5,6 +5,7 @@ name = "terminal"
 auto_switch = false
 
 [ui]
+
 status_indicators = "symbols"
 tab_bar_position = "top"
 hide_tab_bar_when_single_tab = true
@@ -12,10 +13,9 @@ hide_tab_bar_when_single_tab = true
 [ui.toast]
 delivery = "herdr"
 
-[ui.sidebar]
-
-[ui.sidebar.agents]
-rows = [["state_icon", "machine", "workspace", "tab"], ["agent"]]
-
 [experimental]
 allow_nested = true
+
+
+[ui.sidebar.agents]
+rows = [["state_icon", "$logo", "agent", "workspace", "tab"]]
