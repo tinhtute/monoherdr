@@ -19,14 +19,14 @@ allow_nested = true
 
 [ui.sidebar.agents]
 row_gap = 0
-rows = [["$logo", { token = "agent", fg = "#888888", rules = [{ contains = "CoS", fg = "#ff5fa2", bold = true }, { contains = "-lead", fg = "#ff9f43" }] }], ["state_icon", "workspace", "tab"]]
+rows = [["state_icon", "$logo", { token = "agent", fg = "#888888", rules = [{ contains = "CoS", fg = "#ff5fa2", bold = true }, { contains = "-lead", fg = "#ff9f43" }] }], ["workspace", "tab"]]
 
 # Brand colours from hhdebb/herdr-radar lib/palette.js; ink-only vendors keep the default.
 [ui.sidebar.agents.rows_by_agent]
-claude = [[{ token = "$logo", fg = "#d97757" }, { token = "agent", fg = "#888888", rules = [{ contains = "CoS", fg = "#ff5fa2", bold = true }, { contains = "-lead", fg = "#ff9f43" }] }], ["state_icon", "workspace", "tab"]]
-gemini = [[{ token = "$logo", fg = "#4285f4" }, { token = "agent", fg = "#888888", rules = [{ contains = "CoS", fg = "#ff5fa2", bold = true }, { contains = "-lead", fg = "#ff9f43" }] }], ["state_icon", "workspace", "tab"]]
-kimi = [[{ token = "$logo", fg = "#1783ff" }, { token = "agent", fg = "#888888", rules = [{ contains = "CoS", fg = "#ff5fa2", bold = true }, { contains = "-lead", fg = "#ff9f43" }] }], ["state_icon", "workspace", "tab"]]
-qwen = [[{ token = "$logo", fg = "#615ced" }, { token = "agent", fg = "#888888", rules = [{ contains = "CoS", fg = "#ff5fa2", bold = true }, { contains = "-lead", fg = "#ff9f43" }] }], ["state_icon", "workspace", "tab"]]
-kiro = [[{ token = "$logo", fg = "#9046ff" }, { token = "agent", fg = "#888888", rules = [{ contains = "CoS", fg = "#ff5fa2", bold = true }, { contains = "-lead", fg = "#ff9f43" }] }], ["state_icon", "workspace", "tab"]]
-cline = [[{ token = "$logo", fg = "#586876" }, { token = "agent", fg = "#888888", rules = [{ contains = "CoS", fg = "#ff5fa2", bold = true }, { contains = "-lead", fg = "#ff9f43" }] }], ["state_icon", "workspace", "tab"]]
-kilo = [[{ token = "$logo", fg = "#9a9808" }, { token = "agent", fg = "#888888", rules = [{ contains = "CoS", fg = "#ff5fa2", bold = true }, { contains = "-lead", fg = "#ff9f43" }] }], ["state_icon", "workspace", "tab"]]
+claude = [["state_icon", { token = "$logo", fg = "#d97757" }, { token = "agent", fg = "#888888", rules = [{ contains = "CoS", fg = "#ff5fa2", bold = true }, { contains = "-lead", fg = "#ff9f43" }] }], ["workspace", "tab"]]
+gemini = [["state_icon", { token = "$logo", fg = "#4285f4" }, { token = "agent", fg = "#888888", rules = [{ contains = "CoS", fg = "#ff5fa2", bold = true }, { contains = "-lead", fg = "#ff9f43" }] }], ["workspace", "tab"]]
+kimi = [["state_icon", { token = "$logo", fg = "#1783ff" }, { token = "agent", fg = "#888888", rules = [{ contains = "CoS", fg = "#ff5fa2", bold = true }, { contains = "-lead", fg = "#ff9f43" }] }], ["workspace", "tab"]]
+qwen = [["state_icon", { token = "$logo", fg = "#615ced" }, { token = "agent", fg = "#888888", rules = [{ contains = "CoS", fg = "#ff5fa2", bold = true }, { contains = "-lead", fg = "#ff9f43" }] }], ["workspace", "tab"]]
+kiro = [["state_icon", { token = "$logo", fg = "#9046ff" }, { token = "agent", fg = "#888888", rules = [{ contains = "CoS", fg = "#ff5fa2", bold = true }, { contains = "-lead", fg = "#ff9f43" }] }], ["workspace", "tab"]]
+cline = [["state_icon", { token = "$logo", fg = "#586876" }, { token = "agent", fg = "#888888", rules = [{ contains = "CoS", fg = "#ff5fa2", bold = true }, { contains = "-lead", fg = "#ff9f43" }] }], ["workspace", "tab"]]
+kilo = [["state_icon", { token = "$logo", fg = "#9a9808" }, { token = "agent", fg = "#888888", rules = [{ contains = "CoS", fg = "#ff5fa2", bold = true }, { contains = "-lead", fg = "#ff9f43" }] }], ["workspace", "tab"]]
