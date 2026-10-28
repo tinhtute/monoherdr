@@ -22,7 +22,11 @@ STALE = ["role_label", "cos_bar", "lead_bar", "worker_bar", "logo_cos", "logo_le
 
 
 def herdr():
-    return os.environ.get("HERDR_BIN_PATH") or shutil.which("herdr") or "herdr"
+    # HERDR_BIN_PATH can outlive the binary after a reinstall, so only trust it if it still exists.
+    env = os.environ.get("HERDR_BIN_PATH")
+    if env and os.access(env, os.X_OK):
+        return env
+    return shutil.which("herdr") or "herdr"
 
 
 def main():
